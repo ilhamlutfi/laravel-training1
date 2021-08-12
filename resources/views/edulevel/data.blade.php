@@ -61,7 +61,7 @@
                                 <td>{{ $edu->name }}</td>
                                 <td>{{ $edu->desc }}</td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-primary btn-sm">
+                                    <a href="{{ url('edulevels/edit', $edu->id) }}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-edit"></i>
                                     </a>
                                 </td>

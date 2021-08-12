@@ -30,4 +30,24 @@ class EdulevelController extends Controller
 
         return redirect('edulevels')->with('status', 'Data has been added..!');
     }
+
+    public function edit($id)
+    {
+        $data = [
+            'data_edit' => DB::table('edulevels')->where('id', $id)->first()
+        ];
+
+        return view('edulevel.edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        DB::table('edulevels')->where('id', $id)
+        ->update([
+            'name' => $request->name,
+            'desc' => $request->desc 
+        ]);
+
+        return redirect('edulevels')->with('status', 'Data has been updated..!');
+    }
 }
